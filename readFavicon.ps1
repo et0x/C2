@@ -9,7 +9,7 @@ function Get-FaviconText
     add-type -path "C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Drawing.dll"
     $img = [system.drawing.image]::fromfile("$($WriteTo)\favicon.ico")
     $final = ""
-    [int]$locIndex = 0
+    $locIndex = 0
 
     while (1) {
         try{
