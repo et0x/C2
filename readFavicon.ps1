@@ -12,7 +12,9 @@ function Get-FaviconText
     
     [system.io.file]::writeallbytes("$WriteTo\favicon.ico",$data)
     
-    add-type -path "C:\Windows\Microsoft.NET\Framework\v4.0.30319\System.Drawing.dll"
+    $dll = [string]::format("$env:SystemRoot\Microsoft.NET\Framework\v{0}.{1}.{2}\System.Drawing.dll",$psversiontable.clrversion.major,$psversiontable.clrversion.minor,$psversiontable.clrversion.build)
+    
+    add-type -path $dll
     
     $img = [system.drawing.image]::fromfile("$($WriteTo)\favicon.ico")
     
