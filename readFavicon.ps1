@@ -13,6 +13,7 @@ function Get-FaviconText
      
     .PARAMETER URL
     The URL pointing to the favicon you wish to download.
+    
     .PARAMETER WriteTo
     The location on your disk you wish to put the favicon after downloading.  This is a requirement
     for loading the favicon / reading the pixels / translating the colors into code.
