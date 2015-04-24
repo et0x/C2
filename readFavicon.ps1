@@ -39,8 +39,10 @@ function Get-FaviconText
     #>
 
     Param(
-        
+        [Parameter( Position=0, Mandatory=$true )]
         [string]$URL,
+        
+        [Parameter( Position=1, Mandatory=$true )]
         [string]$WriteTo
         
         )
